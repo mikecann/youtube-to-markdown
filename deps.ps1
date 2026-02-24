@@ -1,5 +1,14 @@
-# deps.ps1 — vid2md dependency check
-# No external dependencies. Uses built-in PowerShell (Invoke-RestMethod, Set-Clipboard)
-# and Windows Runtime toast notifications (available on Windows 10+).
+# deps.ps1 - install dependencies for video-to-markdown
 
-Write-Host "  vid2md: no external dependencies required." -ForegroundColor Green
+if (-not (Get-Command bun -ErrorAction SilentlyContinue)) {
+    Write-Host "  [WARN] bun is not installed." -ForegroundColor Yellow
+    Write-Host "         Install it with:  winget install oven-sh.bun" -ForegroundColor Yellow
+    Write-Host "         Or visit:         https://bun.sh" -ForegroundColor Yellow
+    return
+}
+
+Write-Host "  [bun]  Installing video-to-markdown dependencies..." -ForegroundColor DarkGray
+Push-Location $PSScriptRoot
+bun install --silent 2>&1 | Out-Null
+Pop-Location
+Write-Host "  [ok]   video-to-markdown dependencies ready." -ForegroundColor Green
