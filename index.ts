@@ -2,9 +2,9 @@
 // Convert a YouTube URL to a markdown image link and copy it to clipboard.
 //
 // Usage:
-//   video-to-markdown                      # prompt for URL (pre-fills clipboard if YouTube URL)
-//   video-to-markdown <url>                # convert URL directly
-//   video-to-markdown <file.url>           # read URL from a Windows Internet Shortcut
+//   youtube-to-markdown                      # prompt for URL (pre-fills clipboard if YouTube URL)
+//   youtube-to-markdown <url>                # convert URL directly
+//   youtube-to-markdown <file.url>           # read URL from a Windows Internet Shortcut
 
 import { input } from '@inquirer/prompts';
 import { readFileSync, existsSync } from 'fs';
@@ -95,7 +95,7 @@ process.on('uncaughtException', (err: Error & { name?: string }) => {
 });
 
 console.log('');
-console.log('\x1b[36m  VIDEO TO MARKDOWN\x1b[0m');
+console.log('\x1b[36m  YOUTUBE TO MARKDOWN\x1b[0m');
 console.log(SEP);
 console.log('');
 

@@ -1,5 +1,5 @@
 {
-  "name": "video-to-markdown",
+  "name": "youtube-to-markdown",
   "private": true,
   "type": "module",
   "dependencies": {
